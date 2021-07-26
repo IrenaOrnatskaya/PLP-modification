@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Listing Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container refinements">
+      <select id="filterBy">
+        <option value="0">Select one</option>
+        <option value="price">price</option>
+        <option value="title">title</option>
+      </select>
+    </div>
+    <div class="container" id="container">
+
+    </div>
+
+    <script src="database.js"></script>
+    <script src="app.js"></script>
+    <script type="text/template" id="template">
+      <div class="plp" id="plp-item-{{id}}">
+        <div class="plp__header">{{title}}</div>
+        <div class="plp__body">
+          <img class="plp__image" src="{{image}}"/>
+          <div class="plp__content">
+            <div class="plp__content--price">{{price}}</div>
+            <div class="plp__content--quantity">
+              <div class="plp__content--button js-button-minus">-</div>
+              <div class="plp__content--number js-selector-quantity">1</div>
+              <div class="plp__content--button js-button-plus">+</div>
+            </div>
+          </div>
+        </div>
+        <div class="plp__footer">{{description}}</div>
+      </div>
+    </script>
+  </body>
+</html>
